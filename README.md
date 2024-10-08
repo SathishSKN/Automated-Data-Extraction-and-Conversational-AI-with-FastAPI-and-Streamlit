@@ -59,12 +59,12 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
 
        uvicorn main:app --host 0.0.0.0 --port 8000 / uvicorn main:app --reload
 
-2. The API will be accessible at http://localhost:8000 or at localhost
+2. The API will be accessible at `http://localhost:8000` or at `localhost`
 
 ## FastAPI Endpoints
 
 1. **Load Data**
-- **Endpoint:** /load
+- **Endpoint:** `/load`
 - **Method:** POST
 - **Request Body:**
 
@@ -75,12 +75,12 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
 - **Description:** Accepts a Wikipedia page URL, extracts the data, processes it, and loads it into the vector database.
 
 - **Response:**
-       - **Success:** {"message": "Data loaded successfully"}
-       - **Error:** {"detail": "Error message"}
+       - **Success:** `{"message": "Data loaded successfully"}`
+       - **Error:** `{"detail": "Error message"}`
 
 2. **Query Data**
 
-- **Endpoint:** /query
+- **Endpoint:** `/query`
 
 - **Method:** POST
 
@@ -93,8 +93,8 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
 - **Description:** Accepts a user query, retrieves relevant data from the vector database, and generates an answer using the generative AI model.
 
 - **Response:**
-       - **Success:** {"answer": "Your answer here"}
-       - **Error:** {"detail": "Error message"}
+       - **Success:** `{"answer": "Your answer here"}`
+       - **Error:** `{"detail": "Error message"}`
 
 ## Running the Streamlit App
 
@@ -102,7 +102,7 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
 
        streamlit run chatbot.py
 
-2. Access the app at http://localhost:8501.
+2. Access the app at `http://localhost:8501`.
 
 ## Error Handling
 
