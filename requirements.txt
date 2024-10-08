@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+beautifulsoup4
+requests
+weaviate-client  # or your vector database
+langchain
+langchain_core
+langchain_nvidia_ai_endpoints
+langchain_weaviate
+dotenv
+streamlit
