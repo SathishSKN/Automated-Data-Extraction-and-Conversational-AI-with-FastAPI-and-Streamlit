@@ -46,7 +46,7 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
    ```bash
    docker run -p 8080:8080 wikipedia-rag-chatbot
    
-The API will be accessible at `http://localhost:8000`.
+The API will be accessible at `http://localhost:8080`.
 
 
 ### Without Docker
