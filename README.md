@@ -52,6 +52,7 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
 
        export NVIDIA_API_KEY='your_api_key_here'  # For NVIDIA models
 
+
 ## Usage
 ### Running the FastAPI Server
 
@@ -96,6 +97,7 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
        - **Success:** `{"answer": "Your answer here"}`
        - **Error:** `{"detail": "Error message"}`
 
+
 ## Running the Streamlit App
 
 1. Start the Streamlit app:
@@ -104,14 +106,17 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
 
 2. Access the app at `http://localhost:8501`.
 
+
 ## Error Handling
 
 - Each API endpoint includes error handling for common issues, such as invalid URLs or failed data extraction.
+
 
 ## Additional Notes
 
 - Ensure your environment is set up with the necessary API keys and dependencies.
 - Refer to the code comments for detailed explanations of functions and logic.
+
 
 ## License
 
