@@ -1,2 +1,2 @@
-# Automated-Data-Extraction-and-Conversational-AI-with-FastAPI-and-Streamlit
-A Wikipedia-Based Q&amp;A System Using Vector Databases and Generative Models
+# Wikipedia_RAG_Chatbot
+This project implements a Retrieval-Augmented Generation (RAG) chatbot that extracts data from Wikipedia, stores it in a vector database, and uses a generative AI model to answer user queries.
