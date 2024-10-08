@@ -16,7 +16,6 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
 - **Generative AI Model**: NVIDIA AI model
 - **API Framework**: FastAPI
 - **Frontend**: Streamlit
-- **Containerization**: Docker
 
 ## Project Structure
 
@@ -28,7 +27,6 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
       ├── /main.py             # FastAPI application with endpoints
       ├── /chatbot.py          # Streamlit frontend
       ├── requirements.txt     # Python dependencies
-      ├── Dockerfile           # Docker configuration 
       └── README.md            # Project documentation
 
 
@@ -36,20 +34,6 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
 ## Installation
 
 ### Using Docker
-
-1. **Build the Docker Image**:
-   In the project directory, run:
-   ```bash
-   docker build -t wikipedia-rag-chatbot .
-
-2. Run the Docker Container:
-   ```bash
-   docker run -p 8000:8000 wikipedia-rag-chatbot
-   
-The API will be accessible at `http://localhost:8000`.
-
-
-### Without Docker
 
 1. Clone the repository:
 ```bash   
@@ -146,33 +130,6 @@ streamlit run chatbot.py
 
 This project is a prototype and is not licensed under any specific terms. Use it for educational purposes only.
 
-```
-### Dockerfile Example
-
-If you don't already have a `Dockerfile`, here's a simple example you can include in your project:
-
-```Dockerfile
-# Use an official Python runtime as a parent image
-FROM python:3.10-slim
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-COPY . .
-
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Make port 8000 available to the world outside this container
-EXPOSE 8080
-
-# Define environment variable
-ENV NVIDIA_API_KEY='your_api_key_here'
-
-# Run the application
-CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"] / [uvicorn main:app --reload]
-```
 
 
 
