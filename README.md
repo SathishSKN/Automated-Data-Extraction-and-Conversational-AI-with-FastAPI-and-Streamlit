@@ -11,15 +11,10 @@ Tools & Technologies
 - Frontend: Streamlit (for user interaction)
 
 
-Project Structure
+## Installation
 
-bash
+1. Clone the repository:
+   
+       git clone https://github.com/SathishSKN/Wikipedia-RAG-Chatbot
+       cd wikipedia-rag-chatbot
 
-/wikipedia-rag-chatbot
-│
-├── /wiki.py             # Data extraction from Wikipedia
-├── /vecdb.py            # Vector database interactions and processing
-├── /api.py              # FastAPI application with endpoints
-├── /streamlit_app.py     # Streamlit frontend
-├── requirements.txt      # Python dependencies
-└── README.md             # Project documentation
