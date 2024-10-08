@@ -33,8 +33,6 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
 
 ## Installation
 
-### Using Docker
-
 1. Clone the repository:
 ```bash   
 git clone https://github.com/SathishSKN/Wikipedia-RAG-Chatbot
