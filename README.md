@@ -10,6 +10,17 @@ Tools & Technologies
 - API Framework: FastAPI
 - Frontend: Streamlit (for user interaction)
 
+## Project Structure
+
+      /wikipedia-rag-chatbot
+      │
+      ├── /wiki.py             # Data extraction from Wikipedia
+      ├── /vecdb.py            # Vector database interactions and processing
+      ├── /main.py             # FastAPI application with endpoints
+      ├── /streamlit_app.py    # Streamlit frontend
+      ├── requirements.txt     # Python dependencies
+      └── README.md            # Project documentation
+
 
 ## Installation
 
