@@ -24,6 +24,8 @@ with st.form("load_form", clear_on_submit=False):
 
     if load_button or st.session_state.load_on_enter:
         response = requests.post("http://localhost:8000/load", json={"url": url})
+        print(f"Load URL Request: {response.request.url}, Status Code: {response.status_code}, Response: {response.json()}")
+        if response.status_code == 200:
         if response.status_code == 200:
             st.success("Data loaded successfully!")
             st.session_state.load_on_enter = False  # Reset state

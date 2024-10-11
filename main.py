@@ -87,7 +87,7 @@ async def query_data(request: QueryRequest):
             chain_type="stuff", 
             retriever=retriever
         )
-        template = """You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use five sentences maximum and keep the answer concise.
+        template = """You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use five to ten sentences maximum and keep the answer concise.
         Question: {question}
         Context: {context}
         Answer:
