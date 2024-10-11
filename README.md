@@ -12,7 +12,7 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that extr
 ## Tools & Technologies
 - **Programming Language**: Python
 - **Web Scraping**: BeautifulSoup
-- **Vector Database**: Weaviate (or Milvus, if preferred)
+- **Vector Database**: Weaviate
 - **Generative AI Model**: NVIDIA AI model
 - **API Framework**: FastAPI
 - **Frontend**: Streamlit
