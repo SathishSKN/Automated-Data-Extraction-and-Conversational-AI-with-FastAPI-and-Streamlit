@@ -87,11 +87,12 @@ async def query_data(request: QueryRequest):
             chain_type="stuff", 
             retriever=retriever
         )
-        template = """You are an AI assistant for question-answering tasks for the provided wikipedia URLs.
+        template = """You are an AI assistant for question-answering tasks for the provided wikipedia URL.
           Use the following pieces of retrieved context to answer the question. 
+          ONLY use information from the provided context. DO NOT use any outside knowledge.
           If you don't know the answer, just say "Hmm, I'm not sure." Don't try to make up an answer.
           If the question is not about the provided context, politely inform them that you are tuned to only answer questions about provided wikipedia URL.
-          Don't try to generate or infer any related answers if it's not available in the provided context. 
+          Do NOT infer any answers not directly available in the provided context. 
 
         Question: {question}
         Context: {context}
