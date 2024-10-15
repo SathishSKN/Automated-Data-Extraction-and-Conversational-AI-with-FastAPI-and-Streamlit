@@ -87,7 +87,12 @@ async def query_data(request: QueryRequest):
             chain_type="stuff", 
             retriever=retriever
         )
-        template = """You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use five to ten sentences maximum and keep the answer concise.
+        template = """You are an AI assistant for question-answering tasks for the provided wikipedia URLs.
+          Use the following pieces of retrieved context to answer the question. 
+          If you don't know the answer, just say "Hmm, I'm not sure." Don't try to make up an answer.
+          If the question is not about the provided context, politely inform them that you are tuned to only answer questions about provided wikipedia URL.
+          Don't try to generate or infer any related answers if it's not available in the provided context. 
+
         Question: {question}
         Context: {context}
         Answer:
