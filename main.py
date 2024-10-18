@@ -37,6 +37,7 @@ try:
     """
     # Connecting to the local weaviate server 
     weaviate_client = weaviate.connect_to_local()
+
     # Creating a Weaviate Vecto Database
     vecdb = WeaviateVectorStore.from_documents([], nv_embeddings, client=weaviate_client)
 except Exception as e:
@@ -111,6 +112,6 @@ async def query_data(request: QueryRequest):
         logging.error(f"Error querying data: {e}")
         raise HTTPException(status_code=500, detail="Failed to query data.")
 
-# if __name__ == "__main__":
-#     import uvicorn
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
