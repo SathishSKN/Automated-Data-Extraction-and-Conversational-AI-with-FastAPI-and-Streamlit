@@ -24,10 +24,14 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 # Load environment variables
 load_dotenv()
+# Get the API key from environment variables
 api_key = os.getenv("NVIDIA_API_KEY")
 
+# Check if the API key is missing
 if not api_key:
+    # Log an error message if the API key is not found
     logging.error("API key not found. Please set NVIDIA_API_KEY in your environment.")
+    # Exit the program with an error status
     exit(1)
 
 # Initialize models
@@ -63,6 +67,7 @@ def splitter(data):
 
         # Storing the paragraph
         documents = [Document(page_content=item["paragraph"], metadata=item["metadata"]) for item in data]
+
         # Document Chunking
         data_chunks = text_splitter.split_documents(documents)
         return data_chunks
@@ -78,8 +83,10 @@ data_chunks = splitter(data)
 
 # Loading Data into Weaviate Vector Database
 weaviate_client = weaviate.connect_to_local()
+
 # Creating a Vector Database
 vecdb = WeaviateVectorStore.from_documents(data_chunks, nv_embeddings, client=weaviate_client)
+
 # Assigning the retriever
 retriever = vecdb.as_retriever(search_type="mmr")
 
@@ -96,7 +103,13 @@ chain = RetrievalQAWithSourcesChain.from_chain_type(
 # )
 
 # Template for instruct_llm model
-template = """You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use five sentences maximum and keep the answer concise.
+template = """You are an AI assistant for question-answering tasks for the provided wikipedia URL.
+Use the following pieces of retrieved context to answer the question. 
+ONLY use information from the provided context. DO NOT use any outside knowledge.
+If you don't know the answer, just say "Hmm, I'm not sure." Don't try to make up an answer.
+If the question is not about the provided context, politely inform them that you are tuned to only answer questions about provided wikipedia URL.
+Do NOT infer any answers not directly available in the provided context. 
+
 Question: {question}
 Context: {context}
 Answer:
